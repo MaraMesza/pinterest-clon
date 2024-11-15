@@ -1,0 +1,228 @@
+* {
+    /* hay algo q se llama selector universal(todo lo q hay en el html es el "*" */
+    margin: 0;
+    padding: 0;
+    /*el padding es el espacio que hay entre el margen y el objeto al que se le aplica*/
+    border: box;
+    /*el border es donde termina el margen por asi decirlo*/
+}
+
+/*el padding puede tener 4 valores, pero eimpre va en orden de ARRIBA DERECHA, ABAJO IZQ*/
+
+body {
+    background-color: white;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+/*dentro de header esta la etiqueta nav*/
+header nav {
+    position: fixed;/*para fijarlo visible siempre*/
+    z-index: 1;/**/
+    width: 98vw;
+    /*en lugar de px se usa View x Weight que en este caso es el ancho de la vista de la pantalla*/
+    height: 80px;
+    /*es el alto del menu*/
+    font-size: 16px;
+    background-color: white;
+    display: flex;
+    /*que es una flexbox? es una caracteristica del display
+El display es una propiedad que puede ser flex,flexbox etc etc*/
+    flex-direction: row;
+    /*la direccion en que va a ir*/
+    justify-content: space-between;
+    /* como seria el espaciado entre los elementos*/
+    align-items: center;
+    /*es para la alineacion de arriba/abajo*/
+}
+
+/* el display es el como se va a ver el elemento o sea es la vista en este caso la propiedad de flex, lo primero es tener una cajita o contenedor */
+
+
+#pinterest-icon {
+    width: 35px;
+    height: 35px;
+    padding: 4px;
+}
+
+/*el hover es el efecto cuando el mouse pasa por encima*/
+#pinterest-icon:hover {
+    background-color: #e9e9e9;
+    border-radius: 150px;
+}
+
+/*Para poner la lista de otra manera*/
+.first-list {
+    display: flex;
+}
+
+.first-list li {
+    /*dentro de la clase fistlist hay una li que queremos que:*/
+    list-style: none;
+    /*se quiten las viñetas */
+    padding: 14px 12px;
+    /*colocamos el espacio entre cada opcion de la lista se pone ambos lados izq y derech*/
+    /*un pading es para poner un espacio entre la cajita y el texto--*/
+}
+
+.first-list a {
+    /*ESTE ES PARA LA ETIQUET A QUE ESTA DENTRO DE LA LISTA*/
+    text-decoration: none;
+    /*para quitar decoracion del texto*/
+    color: black;
+}
+
+#Inicio {
+    /*el # es ara especificar un ID*/
+    background-color: black;
+    /*el color de la cajita que se llama inicio*/
+    color: white;
+    padding: 12px 12px;
+    /*que crezca como hacia dentro el primero es la altura yel otro es lo largo*/
+    border-radius: 25px;
+}
+
+.search {
+    flex-grow: 1;
+    height: 48px;
+    background-color: #e9e9e9;
+    border-radius: 30px;
+}
+
+.search:hover {
+    /*para cuando se posa el mouse*/
+    background-color: #e1e1e1;
+}
+
+.search:focus-within {
+    border: 4px solid #7fc1ff;
+    /*este es para que se vea la sombra al rededor  de la barrita al sellecionar*/
+}
+
+.barra {
+    display: flex;
+    align-items: center;
+    height: 48px;
+}
+
+#lupa {
+    /*el # es para identificar ID*/
+    padding: 13px;
+    color: #767676;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+.barra input {
+    border: none;
+    /*para quitar el borde*/
+    background-color: inherit;
+    /*inherit es pa q agarre el color del que esta arriba de este input, tipo como una varibale goblal*/
+    padding: 0px 8px 0px 0px;
+    /*arriba derech abajo izquierdo*/
+    font-size: 16px;
+    flex-grow: 1;
+    outline: none;
+    /*es para que no aparezca un border en la barra de busqueda*/
+}
+
+.right-items span {
+    padding: 8px;
+    color: #767676;
+    font-size: 28px;
+}
+
+.right-items span:hover {
+    background-color: #e9e9e9;
+    border-radius: 150px;
+    cursor: pointer;
+    /*para cambiar el cursor cuando se posa el mouse*/
+}
+
+.contenido {
+    position: absolute;
+    /*para que abarque todo*/
+    margin-top: 80px;
+    /*para separar lo de arriba (el menu) del contenido*/
+}
+
+.imagenes {
+    columns: 6 240px;
+    /*se distribuyen en columnas, en este caso 5, los 240px depende del tamaño de pantalla que se tenga*/
+    margin: auto;
+}
+
+.card-image {
+    position: relative;
+    padding: 6px;
+    /*para que tengan un espacio entre ellas*/
+}
+
+.card-image img {
+    /*dentro de la clase se tiene la etiqueta IMG*/
+    border-radius: 15px;
+    min-width: 240px;
+    /*minimo debe medir eso el alto puede variar pero el ancho no*/
+    max-width: 240px;
+    /*masimo debe medir esto*/
+}
+
+/*para q se oscurezca cuando se posa el cursor, el simbolito es para indicar que solo afecta a los que estan dentro de CARD Image*/
+.card-image:hover>:first-child {
+    filter: brightness();
+}
+
+/*para hacer que los botones esten ocultos hazta q aparezca el cursor*/
+.card-image:hover>* {
+    visibility: visible;
+    display: inline;
+    /*para que se vea dentro de la imagen los botoncitos*/
+}
+
+.button {
+    position: absolute;
+    /*para que el boton se ponga dentro de la imagen*/
+    left: 55%;
+    top: 5%;
+    padding: 13px 15px;
+    background-color: #e60023;
+    border-radius: 30px;
+    border: none;
+    visibility: hidden;
+}
+
+.button a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.oculto1 {
+    position: absolute;
+    left: 57%;
+    /*que este en la derecha */
+    bottom: 8px;
+    background-color: white;
+    font-size: 30px;
+    border-radius: 50px;
+    color: black;
+    font-weight: bold;
+    padding: 4px;
+    visibility: hidden;
+    display: none;
+}
+
+
+.oculto2 {
+    position: absolute;
+    left: 72%;
+    bottom: 8px;
+    background-color: white;
+    font-size: 30px;
+    border-radius: 50px;
+    color: black;
+    padding: 4px;
+    visibility: hidden;
+    display: none;
+}
